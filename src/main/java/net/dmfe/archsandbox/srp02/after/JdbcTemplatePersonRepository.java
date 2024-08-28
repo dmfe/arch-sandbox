@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Optional;
 import java.util.UUID;
 
-public class JdbcTemplatePersonRepository implements RowMapper<Person>, PersonRepository {
+public final class JdbcTemplatePersonRepository implements RowMapper<Person>, PersonRepository {
 
     private final JdbcTemplate jdbcTemplate;
 

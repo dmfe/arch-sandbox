@@ -6,7 +6,7 @@ import org.springframework.cache.Cache;
 
 import java.util.Optional;
 
-public class CachingPersonRepository implements PersonRepository {
+public final class CachingPersonRepository implements PersonRepository {
 
     private final Cache cache;
     private final PersonRepository delegate;
