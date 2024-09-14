@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+"Apache Tomcat" -> "Spring Framework\nDispatcherServlet"
+"Spring Framework\nDispatcherServlet" -> Controller
+
+box Application
+    participant Controller
+    participant Service
+    participant Repository
+end box
+
+Controller -> Service
+Service -> Repository
+Repository -> Database
+
+Database --> Repository
+Repository --> Service
+Service --> Controller
+Controller --> "Spring Framework\nDispatcherServlet"
+"Spring Framework\nDispatcherServlet" --> "Apache Tomcat"
+
+
+@enduml
