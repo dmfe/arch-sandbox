@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide empty fields
+hide empty methods
+
+package "With DIP" <<Rectangle>> {
+    class TaskController {
+        -taskService: TaskService
+    }
+
+    interface TaskService
+    class TaskServiceImpl implements TaskService{
+        -taskRepository: TaskRepository
+    }
+
+    interface TaskRepository
+    class TaskRepositoryImpl implements TaskRepository
+
+    TaskController -> TaskService
+    TaskServiceImpl -> TaskRepository
+}
+
+@enduml
